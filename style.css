@@ -1,0 +1,325 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+:root {
+  /* width */
+  --primary-width: 100dvw;
+  --secondary-width: 85dvw;
+
+  /* margin */
+  --auto-margin: 2rem auto;
+  --section-margin: 2rem 0;
+  /* padding */
+  --card-padding: 0.9rem;
+  --section-padding: 1.5rem 0;
+  /* text */
+  --heading-text-size: clamp(2rem, 5vw, 5rem);
+  --footer-text-size: clamp(1.8rem, 5vw, 3rem);
+  --card-text-size: clamp(1rem, 5vw, 2rem);
+  --heading-text-weight: 800;
+  --small-text-weight: 500;
+
+  /* text color */
+  --primary-color: #ffffff;
+  --secondary-color: #18191f;
+  --para-color: #6c6c6c;
+  /* font Weight */
+  --header-font-weight: 700;
+  --card-font-weight: 500;
+  /* gap */
+  --gap-between: clamp(1rem, 2.5vw, 2rem);
+  /* transition */
+  --transition-for-smoothness: all 0.5s ease-in;
+}
+
+button {
+  padding: 0.6rem 2rem;
+  color: azure;
+  font-weight: var(--small-text-weight);
+  border: none;
+  outline: none;
+  background: #e02c6d;
+  transition: var(--transition-for-smoothness);
+  cursor: pointer;
+  text-transform: capitalize;
+}
+
+button:hover {
+  background: #521028;
+}
+body {
+  min-height: fit-content;
+  width: 100%;
+  min-block-size: 100dvh;
+  background: #FFFFFF;
+}
+
+header {
+  width: var(--primary-width);
+  background: royalblue;
+  -webkit-min-height: fit-content;
+  min-height: fit-content;
+}
+.nav__container {
+  font-size: 0.8rem;
+  max-width: var(--secondary-width);
+  margin: var(--auto-margin);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-flow: row nowrap;
+
+  & .navElem {
+    padding: var(--section-padding);
+  }
+
+  & .nav__start {
+    display: none;
+    color: blue;
+    /* background: red; */
+    flex: 2 0 calc(100% / 3);
+    & .menu__list {
+      color: aliceblue;
+      display: flex;
+      flex-flow: row nowrap;
+      gap: var(--gap-between);
+      list-style: none;
+      & a {
+        text-decoration: none;
+        color: inherit;
+      }
+    }
+  }
+  & .nav__center {
+    color: red;
+    /* background: yellow; */
+    flex: 2 0 calc(100% / 3);
+    & .fa-solid {
+      font-size: 4rem;
+    }
+  }
+  & .nav__end {
+    text-align: right;
+    color: rgb(171, 141, 198);
+    /* background: rgb(88, 85, 81); */
+    flex: 1 0 calc(100% / 4);
+  }
+}
+
+.hero__container {
+  width: var(--secondary-width);
+  margin: var(--auto-margin);
+  display: flex;
+  flex-flow: column wrap;
+  gap: var(--gap-between);
+
+  & .hero_title_box {
+    gap: var(--gap-between);
+    display: flex;
+    flex-flow: column nowrap;
+    white-space: nowrap;
+    /* background-color: red; */
+    justify-content: space-evenly;
+    color: var(--primary-color);
+    font-weight: var(--header-font-weight);
+    & p {
+      font-size: var(--heading-text-size);
+    }
+    & button {
+      align-self: flex-start;
+    }
+  }
+  & .hero_figure_box {
+    /* background-color: yellow; */
+    padding-bottom: 2rem;
+    & .hero_figure {
+      & img {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.card__container {
+  width: var(--secondary-width);
+  margin: var(--auto-margin);
+  white-space: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--gap-between);
+  & .card {
+    padding: var(--card-padding);
+    background: #ffffff;
+    & .card_figure {
+      & img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    & .card_heading {
+      font-size: var(--card-text-size);
+      font-weight: var(--header-font-weight);
+      text-transform: capitalize;
+      white-space: nowrap;
+    }
+    & .card_details {
+      font-size: 0.8rem;
+      font-weight: 500;
+      padding: var(--section-padding);
+    }
+  }
+}
+
+.highlights__container {
+  width: var(--secondary-width);
+  margin: var(--auto-margin);
+  white-space: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--gap-between);
+
+  /* display: flex;
+    flex-flow: row wrap;
+    gap: var(--gap-between);
+    width: 85vw;
+    margin: 0 auto; */
+  & .highlights__title {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-evenly;
+    flex: 1 0 300px;
+    padding: var(--section-padding);
+    /* background: yellow; */
+    & .highLights__heading {
+      font-size: var(--footer-text-size);
+      font-weight: var(--header-font-weight);
+    }
+    & button {
+      align-self: flex-start;
+    }
+  }
+  & .highlights__figure {
+    /* background: red; */
+    flex: 1 0 300px;
+    text-align: right;
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+footer {
+  height: 50dvh;
+}
+
+.footer__container{
+
+    text-align: center;
+    width: 80%;
+    margin: 10rem auto;
+    & .footer__logo{
+        width: 100%;
+        & img{
+            width: 50%;
+        }
+    }
+    & .socialIcon__container{
+        
+        & a{
+            width: 10%;
+            margin: auto 0.5rem;
+            & img{
+                width: 10%;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1000px) {
+  header {
+    padding: var(--section-padding);
+  }
+  .nav__container {
+    & .nav__start {
+      display: block;
+    }
+    & .nav__center {
+      display: none;
+    }
+  }
+
+  .hero__container {
+    width: var(--secondary-width);
+    margin: var(--auto-margin);
+    display: flex;
+    flex-flow: row nowrap;
+
+    & .hero_title_box {
+      flex: 1 0 min(calc(50dvh / 2));
+    }
+    & .hero_figure_box {
+      & .hero_figure {
+        & img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: center;
+        }
+      }
+    }
+  }
+
+  .card__container {
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  }
+
+  .highlights__figure {
+    background: red;
+    flex: 1 0 300px;
+    text-align: right;
+    & img {
+      width: 100%;
+      object-fit: cover;
+      height: 100%;
+    }
+  }
+
+  .footer__container{
+    display: flex;
+    align-items: center;
+    flex-flow: column nowrap;
+    text-align: center;
+    width: 80%;
+    margin: 10rem auto;
+    gap: 2rem;
+    & .footer__logo{
+        width: 50%;
+        height: auto;
+        & img{
+            width: 20%;
+            object-fit: contain;
+            height: 100%;
+        }
+    }
+    & .socialIcon__container{
+      
+        & a{
+        gap: 1.5rem;
+        margin: auto 1rem;
+            & img{
+               
+            }
+        }
+    }
+}
+}
